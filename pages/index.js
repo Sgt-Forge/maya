@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 
 import GridLayout from 'react-grid-layout';
 import React from 'react'
+import MyColorPicker from '../components/MyColorPicker'
 import '../node_modules/react-grid-layout/css/styles.css'
 import '../node_modules/react-resizable/css/styles.css'
 
@@ -72,6 +73,8 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        <MyColorPicker />
 
         <button className={styles.button_red} onClick={ () => sendColor('red')}>Red</button>
         <button className={styles.button_green} onClick={ () => sendColor('green')}>Green</button>
