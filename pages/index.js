@@ -2,6 +2,58 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+import GridLayout from 'react-grid-layout';
+import React from 'react'
+import '../node_modules/react-grid-layout/css/styles.css'
+import '../node_modules/react-resizable/css/styles.css'
+
+
+// class MyFirstGrid extends React.Component {
+//   render() {
+//     return (
+//       <GridLayout className="layout" cols={12} rowHeight={30} width={1200}>
+//         <div key="a" data-grid={{x: 0, y: 0, w: 1, h: 2, static: true}}>a</div>
+//         <div key="b" data-grid={{x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4}}>b</div>
+//         <div key="c" data-grid={{x: 4, y: 0, w: 1, h: 2}}>c</div>
+//       </GridLayout>
+//     )
+//   }
+// }
+
+class MyFirstGrid extends React.Component {
+  render() {
+    // layout is an array of objects, see the demo for more complete usage
+    const layout = [
+      {i: 'a', x: 0, y: 0, w: 1, h: 2, static: true},
+      {i: 'b', x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4},
+      {i: 'c', x: 4, y: 0, w: 1, h: 2}
+    ];
+    return (
+      <GridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1200}>
+        <div key="a" className={styles.layoutBox}>a</div>
+        <div key="b" className={styles.layoutBox}>b</div>
+        <div key="c" className={styles.layoutBox}>c</div>
+      </GridLayout>
+    )
+  }
+}
+
+function sendColor(color) {
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ color: 'blue' })
+  };
+  fetch(`http://192.168.1.32:5000/${color}`, requestOptions)
+  .then(response=>{
+    console.log(response.ok);
+    response.text();
+  })
+  .catch(
+      console.log("this is okay")
+  );
+}
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,7 +65,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to Maya
         </h1>
 
         <p className={styles.description}>
@@ -21,35 +73,12 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <button className={styles.button_red} onClick={ () => sendColor('red')}>Red</button>
+        <button className={styles.button_green} onClick={ () => sendColor('green')}>Green</button>
+        <button className={styles.button_blue} onClick={ () => sendColor('blue')}>Blue</button>
+        <button className={styles.button_rainbow} onClick={ () => sendColor('rainbow')}>Rainbows</button>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <MyFirstGrid></MyFirstGrid>
       </main>
 
       <footer className={styles.footer}>
