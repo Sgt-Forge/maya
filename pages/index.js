@@ -55,6 +55,7 @@ function sendColor(color) {
   );
 }
 
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -68,34 +69,11 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to Maya
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <MyColorPicker />
-
-        <button className={styles.button_red} onClick={ () => sendColor('red')}>Red</button>
-        <button className={styles.button_green} onClick={ () => sendColor('green')}>Green</button>
-        <button className={styles.button_blue} onClick={ () => sendColor('blue')}>Blue</button>
-        <button className={styles.button_rainbow} onClick={ () => sendColor('rainbow')}>Rainbows</button>
-
-        <MyFirstGrid></MyFirstGrid>
+        <div className={styles.container}>
+          <MyColorPicker />
+          {/* <MyFirstGrid></MyFirstGrid> */}
+        </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
