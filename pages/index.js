@@ -45,7 +45,7 @@ function sendColor(color) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ color: 'blue' })
   };
-  fetch(`http://192.168.1.32:5000/${color}`, requestOptions)
+  fetch(`http://192.168.1.14:5000/${color}`, requestOptions)
   .then(response=>{
     console.log(response.ok);
     response.text();

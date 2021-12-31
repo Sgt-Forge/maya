@@ -45,8 +45,13 @@ const MyColorPicker = () => {
           <button onClick={ () => sendAnimation(color, 'rainbow_cycle')}>Rainbow Cycle</button>
           <button onClick={ () => sendAnimation(color, 'sparkle')}>Sparkle</button>
           <button onClick={ () => sendAnimation(color, 'rain')}>Rain</button>
+          <button onClick={ () => sendAnimation(color, 'strobe')}>Strobe</button>
+          <button onClick={ () => sendAnimation(color, 'square_bounce')}>Square Bounce</button>
+          <button onClick={ () => sendAnimation(color, 'clockwise_clock')}>Clockwise Clock</button>
+          <button onClick={ () => sendAnimation(color, 'counter_clockwise_clock')}>Counter Clockwise Clock</button>
+
         </div>
-        <div className={styles.container}>
+        {/* <div className={styles.container}>
           <h1>Color Slides</h1>
           <button onClick={ () => sendAnimation(color, 'fill')}>Fill</button>
           <button onClick={ () => sendAnimation(color, 'column_bounce')}>Column Bounce</button>
@@ -54,7 +59,7 @@ const MyColorPicker = () => {
           <button onClick={ () => sendAnimation(color, 'comet')}>Comet</button>
           <button onClick={ () => sendAnimation(color, 'sparkle')}>Sparkle</button>
           <button onClick={ () => sendAnimation(color, 'rain')}>Rain</button>
-        </div>
+        </div> */}
         <div className={styles.container}>
           <h1>Rainbow Cylces</h1>
           <button onClick={ () => sendAnimation(color, 'column_bounce_rainbow')}>Column Bounce Rainbow</button>
@@ -62,8 +67,11 @@ const MyColorPicker = () => {
           <button onClick={ () => sendAnimation(color, 'comet_rainbow', true)}>Comet Rainbow</button>
           <button onClick={ () => sendAnimation(color, 'sparkle_rainbow', true)}>Sparkle Rainbow</button>
           <button onClick={ () => sendAnimation(color, 'rain_rainbow', true)}>Rain Rainbow</button>
+          <button onClick={ () => sendAnimation(color, 'rainbow_square_bounce')}>Rainbow Square Bounce</button>
+          <button onClick={ () => sendAnimation(color, 'rainbow_clockwise_clock')}>Rainbow Clockwise Clock</button>
+          <button onClick={ () => sendAnimation(color, 'rainbow_counter_clockwise_clock')}>Rainbow Counter Clockwise Clock</button>
         </div>
-        <div className={styles.container}>
+        {/* <div className={styles.container}>
           <h1>Random Color</h1>
           <button onClick={ () => sendAnimation(color, 'fill', newRandomColor=true)}>Fill</button>
           <button onClick={ () => sendAnimation(color, 'column_bounce', newRandomColor=true)}>Column Bounce</button>
@@ -71,7 +79,7 @@ const MyColorPicker = () => {
           <button onClick={ () => sendAnimation(color, 'comet', newRandomColor=true)}>Comet</button>
           <button onClick={ () => sendAnimation(color, 'sparkle', newRandomColor=true)}>Sparkle</button>
           <button onClick={ () => sendAnimation(color, 'rain', newRandomColor=true)}>Rain</button>
-        </div>
+        </div> */}
       </div>
     </div>
   )
